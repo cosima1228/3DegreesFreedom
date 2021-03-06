@@ -68,6 +68,8 @@
       <input type="text" id="salary" name="salary"><br>
       <label for="savings">Annual Savings (£):</label><br>
       <input type="text" id="savings" name="savings"><br>
+      <label for="duration">Repayment Time:</label><br>
+      <input type="text" id="duration" name="duration"><br>
       <label for="loanamount">Loan Amount:</label><br>
       <input type="text" id="loanamount" name="loanamount"><br>
       <label for="interest">Loan Compound Interest Rate (%):</label><br>
@@ -75,7 +77,7 @@
       <label for="duration">Expected Duration (years):</label><br>
       <input type="text" id="duration" name="duration"><br><br>
       <input type="button"  class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="Back" value="Back" onclick="back_page()"/>
-      <input name="Submit"  class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit" value="Submit" />
+      <input name="Submit"  class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit" value="Submit" onclick="Calculate()"/>
       <input type="button" class="btn btn-lg btn-secondary fw-bold border-white bg-white" value="Next" onclick="change_page()"/>
 
     </FORM>
@@ -85,6 +87,17 @@
          var jSalary = document.getElementById("salary").value;
          var jSavings = document.getElementById("savings").value;
          alert("Your name is: " + jSalary + " " + jSavings);
+      }
+
+      function Calculate(){
+        var interest = document.getElementById("interest").value;
+        var principal = document.getElementById("principal").value;
+        var duration = document.getElementById("duration").value;
+
+        var tot = (principal*interest*(interest + 1)**(duration))/((interest + 1)**(duration) - 1);
+        alert(tot);
+        sessionStorage.setItem("total", tot);
+
       }
       </script>
 

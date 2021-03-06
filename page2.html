@@ -59,6 +59,7 @@
 
   <main class="px-3">
     <h1>Your Infographic!</h1>
+    <input name="Submit"  class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit" value="Total Payment" onclick="displayVal()"/>
     <p class="lead">Here is what you could do with the money you save by using Plan B instead of Plan A!.</p>
     <p class="lead">You will spend x amount in interest after x years. The premium of your loan is equivalent to xyz moneys which is the same as xyz cups of coffee</p>
     <p></p>
@@ -75,6 +76,11 @@
         function back_page(){
           window.location.href = "page1.html";
         } 
+
+        function displayVal(){
+          var total = sessionStorage.getItem("total");
+          alert(total);
+        }
       </script>
  
       
