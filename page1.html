@@ -13,7 +13,7 @@
     
 
     <!-- Bootstrap core CSS -->
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="../3DegreesFreedom/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -35,34 +35,41 @@
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
   </head>
-  <body class="d-flex h-100 text-center text-white bg-dark">
+  <body style="background-color:mediumturquoise;" class="d-flex h-100 text-center text-white">
     
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
-      <h3 class="float-md-start mb-0">Cover</h3>
+      <h3 class="float-md-start mb-0">Own Your Loan</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Features</a>
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" href="#">About Us</a>
       </nav>
     </div>
   </header>
 
   <main class="px-3">
-    <h1>Cover your page.</h1>
-    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+    <h1>Tell us a bit about yourself.</h1>
+    <p class="lead">Explain what info is for.</p>
     <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
     </p>
  
     <FORM NAME="myform" onSubmit="JavaScript:ExampleJS()"> 
       <label for="fname">First name:</label><br>
-      <input type="text" id="fname" name="fname" value="John"><br>
+      <input type="text" id="fname" name="fname"><br>
       <label for="lname">Last name:</label><br>
-      <input type="text" id="lname" name="lname" value="Doe"><br><br>
-      <input name="Submit"  type="submit" value="Submit" />
-      <input type="button" value="create page" onclick="change_page()"/>
+      <input type="text" id="lname" name="lname"><br>
+      <label for="salary">Annual Salary (£):</label><br>
+      <input type="text" id="salary" name="salary"><br>
+      <label for="savings">Annual Savings (% of Annual Salary):</label><br>
+      <input type="text" id="savings" name="savings"><br>
+      <label for="loanamount">Loan Amount:</label><br>
+      <input type="text" id="loanamount" name="loanamount"><br>
+      <label for="interest">Loan Interest Rate (%):</label><br>
+      <input type="text" id="interest" name="interest"><br><br>
+      <input type="button"  class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="Back" value="Back" onclick="back_page()"/>
+      <input name="Submit"  class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit" value="Submit" />
+      <input type="button" class="btn btn-lg btn-secondary fw-bold border-white bg-white" value="Next" onclick="change_page()"/>
 
     </FORM>
 
@@ -80,11 +87,16 @@
       } 
     </script>
 
+    <script type="text/javascript">
+    function back_page(){
+      window.location.href = "index.html";
+    } 
+  </script>
       
   </main>
 
   <footer class="mt-auto text-white-50">
-    <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+    <p>Three Degrees of Freedom - Imperial College London Hack-her-thon</p>
   </footer>
 </div>
 
