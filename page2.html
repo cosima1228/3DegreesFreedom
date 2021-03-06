@@ -61,31 +61,31 @@
     } 
   </script>
 
-  <main class="px-3">
-    <h1>Your Infographic!</h1>
-    <input name="Submit"  class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit" value="Total Payment" onclick="displayVal()"/>
-    <p class="lead">Here is what you could do with the money you save by using Plan B instead of Plan A!.</p>
-    <p class="lead">You will spend x amount in interest after x years. The premium of your loan is equivalent to xyz moneys which is the same as xyz cups of coffee</p>
-    <p></p>
-    <img type="jpg" src="https://cdn2.iconfinder.com/data/icons/tin-cans/172/20-512.png" width="50"/><img type="jpg" src="https://cdn2.iconfinder.com/data/icons/tin-cans/172/20-512.png" width="50"/><br><br>
-    <img type="jpg" src="https://cdn2.iconfinder.com/data/icons/tin-cans/172/20-512.png" width="50"/><img type="jpg" src="https://cdn2.iconfinder.com/data/icons/tin-cans/172/20-512.png" width="50"/><br><br>
+<main class="px-3">
+  <h1>Your Infographic!</h1>
+  <input name="Submit"  class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit" value="Total Payment" onclick="displayVal()"/>
+  <p class="lead">Here is what you could do with the money you save by using Plan B instead of Plan A!.</p>
+  <p class="lead">You will spend x amount in interest after x years. The premium of your loan is equivalent to xyz moneys which is the same as xyz cups of coffee</p>
+  <p></p>
+  <img type="jpg" src="https://cdn2.iconfinder.com/data/icons/tin-cans/172/20-512.png" width="50"/><img type="jpg" src="https://cdn2.iconfinder.com/data/icons/tin-cans/172/20-512.png" width="50"/><br><br>
+  <img type="jpg" src="https://cdn2.iconfinder.com/data/icons/tin-cans/172/20-512.png" width="50"/><img type="jpg" src="https://cdn2.iconfinder.com/data/icons/tin-cans/172/20-512.png" width="50"/><br><br>
 
 
-    <p class="lead">
-      <input name="Submit"  class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit" value="Back" onclick="back_page()"/>
-      <input type="button" class="btn btn-lg btn-secondary fw-bold border-white bg-white" value="Save Results" />
-    </p>
+  <p class="lead">
+    <input name="Submit"  class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit" value="Back" onclick="back_page()"/>
+    <input type="button" class="btn btn-lg btn-secondary fw-bold border-white bg-white" value="Save Results" />
+  </p>
 
-    <script type="text/javascript">
-        function back_page(){
-          window.location.href = "page1.html";
-        } 
+  <script type="text/javascript">
+      function back_page(){
+        window.location.href = "page1.html";
+      } 
 
-        function displayVal(){
-          var total = sessionStorage.getItem("total");
-          alert(total);
-        }
-    </script>
+      function displayVal(){
+        var total = sessionStorage.getItem("total");
+        alert(total);
+      }
+  </script>
  
       
   </main>
