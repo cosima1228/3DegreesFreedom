@@ -63,7 +63,7 @@
     <p class="lead">
     </p>
  
-    <FORM NAME="myform" onSubmit="JavaScript:ExampleJS()"> 
+    <FORM NAME="myform" onSubmit="JavaScript:Calculate()"> 
       <label for="salary">Annual Salary (£):</label><br>
       <input type="text" id="salary" name="salary"><br>
       <label for="savings">Annual Savings (£):</label><br>
@@ -76,8 +76,8 @@
       <input type="text" id="interest" name="interest"><br>
       <label for="duration">Expected Duration (years):</label><br>
       <input type="text" id="duration" name="duration"><br><br>
-      <input type="button"  class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="Back" value="Back" onclick="back_page()"/>
-      <input name="Submit"  class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit" value="Submit" onclick="Calculate()"/>
+      <input type="button" class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="Back" value="Back" onclick="back_page()"/>
+      <input name="Submit" class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit" value="Submit" onclick="Calculate()"/>
       <input type="button" class="btn btn-lg btn-secondary fw-bold border-white bg-white" value="Next" onclick="change_page()"/>
 
     </FORM>
@@ -90,13 +90,11 @@
       }
 
       function Calculate(){
-        var interest = document.getElementById("interest").value;
-        var principal = document.getElementById("principal").value;
-        var duration = document.getElementById("duration").value;
-
-        var tot = (principal*interest*(interest + 1)**(duration))/((interest + 1)**(duration) - 1);
-        alert(tot);
-        sessionStorage.setItem("total", tot);
+          var interest = document.getElementById("interest").value;
+          var principal = document.getElementById("loanamount").value;
+          var duration = document.getElementById("duration").value;
+          var tot = (principal*interest*(interest + 1)**(duration))/((interest + 1)**(duration) - 1);
+          sessionStorage.setItem("total", tot);
 
       }
       </script>
