@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.80.0">
-    <title>Cover Template · Bootstrap v5.0</title>
+    <title>Hack-Her-Thon Project</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
 
@@ -42,11 +42,20 @@
     <div>
       <h3 class="float-md-start mb-0">Own Your Loan</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">About Us</a>
+        <a class="nav-link active" aria-current="page" href="#" onclick="home_page()">Home</a>
+        <a class="nav-link" href="#"onclick="aboutus_page()">About Us</a>
       </nav>
     </div>
   </header>
+
+  <script type="text/javascript">
+    function aboutus_page(){
+      window.location.href = "aboutus.html";
+    } 
+    function home_page(){
+    window.location.href = "index.html";
+    } 
+  </script>
 
   <main class="px-3">
     <h1>Tell us a bit about yourself.</h1>

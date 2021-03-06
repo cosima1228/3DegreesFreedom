@@ -35,42 +35,47 @@
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
   </head>
-  <body style="background-color:mediumpurple;" class="d-flex h-100 text-center text-white">
+  <body style="background-color:steelblue;" class="d-flex h-100 text-center text-white">
     
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
         <h3 class="float-md-start mb-0">Own Your Loan</h3>
         <nav class="nav nav-masthead justify-content-center float-md-end">
-          <a class="nav-link active" onclick="home_page()" aria-current="page" href="#">Home</a>
-          <a class="nav-link" href="#"onclick="aboutus_page()">About Us</a>
+          <a class="nav-link" href="#" onclick="home_page()">Home</a>
+          <a class="nav-link active" aria-current="page" href="#">About Us</a>
       </nav>
     </div>
   </header>
 
   <script type="text/javascript">
-    function aboutus_page(){
-      window.location.href = "aboutus.html";
-    }
     function home_page(){
-    window.location.href = "index.html";
+      window.location.href = "index.html";
     } 
   </script>
 
   <main class="px-3">
-    <h1>Your Infographic!</h1>
-    <p class="lead">Here is what you could do with the money you save by using Plan B instead of Plan A!.</p>
-    <img type="jpg" src="https://www.taxback.com/resources/blogimages/TB_Infographics_Average%20Basing%20Living%20Costs%20OZV9.jpg" width="300px"/><br><br>
+    <h1>About Us</h1>
+    <p class="lead">Welcome to Own Your Loan! This is the project submission from Three Degrees of Freedom, one of the 2021 Hack-Her-Thon Teams. Our members are Cosima Graef (3rd Yr Biomedical Engineering), Beatriz Teixeira (3rd Yr Biomedical Engineering) and Lili Fehertoi-Nagy (2nd Yr Physics).</p>
     <p class="lead">
-      <input name="Submit"  class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit" value="Back" onclick="back_page()"/>
-      <input type="button" class="btn btn-lg btn-secondary fw-bold border-white bg-white" value="Save Results" />
+        <h2>Ask Us Anything:</h2>
+        <div class="container">
+            <form action="action_page.php">
+          
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="Your name.."><br>
+          
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lastname" placeholder="Your last name.."><br><br>
+          
+              <label for="subject">Your Question</label> <br>
+              <textarea id="subject" name="subject" placeholder="Write something.." style="width:400px" ></textarea> <br>
+          
+              <input type="submit" value="Submit">
+          
+            </form>
+          </div>
     </p>
-
-    <script type="text/javascript">
-        function back_page(){
-          window.location.href = "page1.html";
-        } 
-      </script>
  
       
   </main>
