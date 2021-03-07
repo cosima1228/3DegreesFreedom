@@ -75,6 +75,9 @@
   <img type="jpg" id="salary" src="https://cdn2.iconfinder.com/data/icons/tin-cans/172/20-512.png" width="100" onload="showSalary()"/>Your savings
   <img type="jpg" src="https://cdn2.iconfinder.com/data/icons/tin-cans/172/20-512.png" width="100"/>Your loan<br><br>
 
+  <img type="jpg" id="earnings" src="https://cdn2.iconfinder.com/data/icons/tin-cans/172/20-512.png" width="100" onload="showEarnings()"/>Your savings
+  <img type="jpg" src="https://cdn2.iconfinder.com/data/icons/tin-cans/172/20-512.png" width="100"/>Your invested savings<br><br>
+
   <p class="lead">
     <input name="Submit"  class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit" value="Back" onclick="back_page()"/>
     <input type="button" class="btn btn-lg btn-secondary fw-bold border-white bg-white" value="Save Results" />
@@ -115,6 +118,7 @@
         img.width = 100*scale;
         img.height = 100*scale;
       }
+
       function showSalary(){
         var total = parseFloat(sessionStorage.getItem("total"));
         var savings = parseFloat(sessionStorage.getItem("savings"));
@@ -123,8 +127,16 @@
         var scale = ((savings*duration)/total)**(0.5);
         img.width = 100*scale;
         img.height = 100*scale;
-
       }
+
+      function showEarnings(){
+        var grandtotal = parseFloat(sessionStorage.getItem("total"));
+        var img = document.getElementById("earnings");
+        var scale = ((grandtotal)/(savings*duration))**(0.5);
+        img.width = 100*scale;
+        img.height = 100*scale;
+      }
+
   </script>
  
       
