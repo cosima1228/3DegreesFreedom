@@ -91,8 +91,9 @@
         var total = parseFloat(sessionStorage.getItem("total"));
         var loan = parseFloat(sessionStorage.getItem("loan"));
         var img = document.getElementById("coffee");
-        img.width = 100*(total/loan);
-        img.height = 100;
+        var scale = (total/loan)**(0.5)
+        img.width = 100*scale;
+        img.height = 100*scale;
         }
   </script>
  
