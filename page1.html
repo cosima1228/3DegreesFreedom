@@ -101,8 +101,8 @@
           var duration = parseFloat(document.getElementById("duration").value);
           var salary = parseFloat(document.getElementById("salary").value);
           var savings = parseFloat(document.getElementById("savings").value);
-          var invest = parseFloat(document.getElementById("lump").value);
-          var yield = parseFloat(document.getElementById("yield").value);
+          var investment = parseFloat(document.getElementById("lump").value);
+          var yield = 0.01 * parseFloat(document.getElementById("yield").value);
 
           var intermediate = (interest + 1)**(duration);
           var tot = (duration*principal*intermediate*interest)/(intermediate - 1);
@@ -115,6 +115,7 @@
           sessionStorage.setItem("loan", principal);
           sessionStorage.setItem("duration", duration);
           sessionStorage.setItem("salary", salary);
+          sessionStorage.setItem("savings", savings);
           sessionStorage.setItem("grandtotal", grandtotal);
       }
       </script>
