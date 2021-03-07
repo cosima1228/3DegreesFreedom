@@ -69,17 +69,15 @@
  
     <FORM NAME="myform" onSubmit="JavaScript:Calculate()"> 
       <label for="salary">Annual Salary (£):</label><br>
-      <input type="text" id="salary" name="salary"><br>
+      <input type="number" id="salary" name="salary"><br>
       <label for="savings">Annual Savings (£):</label><br>
-      <input type="text" id="savings" name="savings"><br>
-      <label for="duration">Repayment Time:</label><br>
-      <input type="text" id="duration" name="duration"><br>
+      <input type="number" id="savings" name="savings"><br>
       <label for="loanamount">Loan Amount:</label><br>
-      <input type="text" id="loanamount" name="loanamount"><br>
+      <input type="number" id="loanamount" name="loanamount"><br>
       <label for="interest">Loan Compound Interest Rate (%):</label><br>
-      <input type="text" id="interest" name="interest"><br>
+      <input type="number" id="interest" name="interest"><br>
       <label for="duration">Expected Duration (years):</label><br>
-      <input type="text" id="duration" name="duration"><br><br>
+      <input type="number" id="duration" name="duration"><br><br>
       <input type="button" class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="Back" value="Back" onclick="back_page()"/>
       <input name="Submit" class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit" value="Submit" onclick="Calculate()"/>
       <input type="button" class="btn btn-lg btn-secondary fw-bold border-white bg-white" value="Next" onclick="change_page()"/>
@@ -94,10 +92,11 @@
       }
 
       function Calculate(){
-          var interest = document.getElementById("interest").value;
-          var principal = document.getElementById("loanamount").value;
-          var duration = document.getElementById("duration").value;
-          var tot = (principal*interest*(interest + 1)**(duration))/((interest + 1)**(duration) - 1);
+          var interest = 0.01 *  parseFloat(document.getElementById("interest").value);
+          var principal = parseFloat(document.getElementById("loanamount").value);
+          var duration = parseFloat(document.getElementById("duration").value);
+          var intermediate = (interest + 1)**(duration);
+          var tot = (principal*intermediate*interest)/(intermediate - 1);
           sessionStorage.setItem("total", tot);
 
       }
