@@ -44,7 +44,7 @@
         <nav class="nav nav-masthead justify-content-center float-md-end">
           <a class="nav-link active" onclick="home_page()" aria-current="page" href="#">Home</a>
           <a class="nav-link" href="#"onclick="aboutus_page()">About Us</a>
-          <a class="nav-link" href="#"onclick="glossary_page()">Glossary</a>
+          <a class="nav-link" href="#"onclick="glossary_page()">Financial Glossary</a>
       </nav>
     </div>
   </header>
@@ -63,13 +63,17 @@
 
 <main class="px-3">
   <h1>Your Infographic!</h1>
-  <input name="Submit"  class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit" value="Total Payment" onclick="displayVal()"/>
   <p class="lead">Here is what you could do with the money you save by using Plan B instead of Plan A!.</p>
   <p class="lead">You will spend x amount in interest after x years. The premium of your loan is equivalent to xyz moneys which is the same as xyz cups of coffee</p>
   <p></p>
-  <img type="jpg" id="coffee" src="https://cdn2.iconfinder.com/data/icons/tin-cans/172/20-512.png" width="100" onload="show_image()"/>Coffee with interest
+  <img type="jpg" id="interest" src="https://cdn2.iconfinder.com/data/icons/tin-cans/172/20-512.png" width="100" onload="showInterest()"/>Coffee with interest
   <img type="jpg" src="https://cdn2.iconfinder.com/data/icons/tin-cans/172/20-512.png" width="100"/>Plain coffee
+  <img type="jpg" id="difference" src="https://cdn2.iconfinder.com/data/icons/tin-cans/172/20-512.png" width="100" onload="showDifference()"/>Difference<br><br>
+  <input name="Submit"  class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit" value="Show my total payment" onclick="displayVal()"/><br><br>
+  <input name="Submit"  class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit" value="How many cups of coffee could I buy?" onclick="displayCoffee()"/><br><br>
 
+  <img type="jpg" id="salary" src="https://cdn2.iconfinder.com/data/icons/tin-cans/172/20-512.png" width="100" onload="showSalary()"/>Your savings
+  <img type="jpg" src="https://cdn2.iconfinder.com/data/icons/tin-cans/172/20-512.png" width="100"/>Your loan<br><br>
 
   <p class="lead">
     <input name="Submit"  class="btn btn-lg btn-secondary fw-bold border-white bg-white" type="submit" value="Back" onclick="back_page()"/>
@@ -87,14 +91,40 @@
         alert(total);
       }
 
-      function show_image(){
+      function displayCoffee(){
+        var total = sessionStorage.getItem("total");
+        var loan = sessionStorage.getItem("loan");
+        var coffee = (total-loan)/2.4
+        alert(coffee);
+      }
+
+      function showInterest(){
         var total = parseFloat(sessionStorage.getItem("total"));
         var loan = parseFloat(sessionStorage.getItem("loan"));
-        var img = document.getElementById("coffee");
-        var scale = (total/loan)**(0.5)
+        var img = document.getElementById("interest");
+        var scale = (total/loan)**(0.5);
         img.width = 100*scale;
         img.height = 100*scale;
         }
+      
+      function showDifference(){
+        var total = parseFloat(sessionStorage.getItem("total"));
+        var loan = parseFloat(sessionStorage.getItem("loan"));
+        var img = document.getElementById("difference");
+        var scale = ((total - loan)/loan)**(0.5);
+        img.width = 100*scale;
+        img.height = 100*scale;
+      }
+      function showSalary(){
+        var total = parseFloat(sessionStorage.getItem("total"));
+        var savings = parseFloat(sessionStorage.getItem("savings"));
+        var duration = parseFloat(sessionStorage.getItem("duration"));
+        var img = document.getElementById("salary");
+        var scale = ((savings*duration)/total)**(0.5);
+        img.width = 100*scale;
+        img.height = 100*scale;
+
+      }
   </script>
  
       

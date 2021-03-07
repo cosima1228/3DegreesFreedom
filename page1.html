@@ -44,7 +44,7 @@
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link active" aria-current="page" href="#" onclick="home_page()">Home</a>
         <a class="nav-link" href="#"onclick="aboutus_page()">About Us</a>
-        <a class="nav-link" href="#"onclick="glossary_page()">Glossary</a>
+        <a class="nav-link" href="#"onclick="glossary_page()">Financial Glossary</a>
       </nav>
     </div>
   </header>
@@ -95,11 +95,17 @@
           var interest = 0.01 *  parseFloat(document.getElementById("interest").value);
           var principal = parseFloat(document.getElementById("loanamount").value);
           var duration = parseFloat(document.getElementById("duration").value);
+          var salary = parseFloat(document.getElementById("salary").value);
+          var savings = parseFloat(document.getElementById("savings").value);
+
           var intermediate = (interest + 1)**(duration);
           var tot = (duration*principal*intermediate*interest)/(intermediate - 1);
+
           sessionStorage.setItem("total", tot);
           sessionStorage.setItem("loan", principal);
-
+          sessionStorage.setItem("duration", duration);
+          sessionStorage.setItem("salary", salary);
+          sessionStorage.setItem("savings", savings);
       }
       </script>
 
