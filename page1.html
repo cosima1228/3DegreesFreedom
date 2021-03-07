@@ -96,8 +96,6 @@
       }
 
       function Calculate(){
-          alert("hello");
-
           var interest = 0.01 *  parseFloat(document.getElementById("interest").value);
           var principal = parseFloat(document.getElementById("loanamount").value);
           var duration = parseFloat(document.getElementById("duration").value);
@@ -108,7 +106,7 @@
 
           var intermediate = (interest + 1)**(duration);
           var tot = (duration*principal*intermediate*interest)/(intermediate - 1);
-          
+
           var compounded = principal*(1+yield)**(duration);
           var additional = investment*(1+yield)*((((1+yield)**duration)-1)/yield);
           var grandtotal = compounded + additional;
@@ -117,6 +115,7 @@
           sessionStorage.setItem("loan", principal);
           sessionStorage.setItem("duration", duration);
           sessionStorage.setItem("salary", salary);
+          sessionStorage.setItem("grandtotal", grandtotal);
       }
       </script>
 
